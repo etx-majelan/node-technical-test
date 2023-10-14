@@ -1,8 +1,11 @@
 import Fastify from "fastify";
+import mediaRoutes from './medias/routes';
 
 const fastify = Fastify({
   logger: true
 });
+
+fastify.register(mediaRoutes, { prefix: '/medias' });
 
 const start = async () => {
   try {
