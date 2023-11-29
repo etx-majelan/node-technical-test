@@ -2,7 +2,18 @@
 
 ## Getting Started
 
-Fork this repository to work on it as you would usually do. Once you're done, send us the URL so we can take a look!
+This is my implementation of the Majelan Node Technical Test.
+
+The project follows the Clean Architecture Rules.
+
+You can find the 3 main layers: 
+Application (Controllers) - Responsible to recieve calls from the clients and to send the result depending of the state fo the server
+
+Domain (Services) - Contains all the Business logic and is not aware of any specificities of the technical aspects (Database, RestAPI/GraphQL, ...)
+
+Infrastructure (Repositories) - Responsible for the database communications 
+
+Some points can still be improved like making the env variable configurable for the project or having some base classes for the repositories,services and controllers.
 
 ### Running the thing
 
@@ -13,40 +24,11 @@ docker compose up -d
 yarn start
 ```
 
-The api service will run on port 8080, the web service will run on port 3000.
-Open http://localhost:3000 with your browser to access the web app.
+The api service will run on port 8080.
+A swagger will be presented at http://localhost:8080/docs
 
-## What you'll have to do
-Clients want to organise their own content. They have audio files which they want to upload and organise into programs. They also want to be able to edit and delete their content.
+In order to run the unit tests you can use the following command:
 
-You will have to create the endpoints to manage medias and programs. You will find the models for each entity along in the sections below.
-
-#### Medias
-A media has a name, a file, a duration, and a description.
-- Create a media (don't upload anything for real, just create a fake audio file or use a dummy URL)
-- Edit a media
-- Delete a media
-- See all the medias on a page (with pagination)
-
-#### Programs
-A program has a name, a cover image (you can use a dummy URL), and a description.
-- Create a program
-- Edit a program
-- Delete a program
-- See all the programs on a page (with pagination)
-
-#### Rules
-- A program can contain between 0 and infinity medias.
-- A media cannot be in more than one program.
-- The order of medias may matter.
-
-
-### Requirements
-- You must use the boilerplate code as a base for your work. You can add any other dependency you need.
-- You must deliver all the features required.
-- You must test your endpoints to make sure they work as expected. How you test them is up to you.
-
-### Bonus points
-- You can add any extra feature that you'd like to see in this app. Be creative!
-- You can also add any extra quality of life improvement to the app or code (linter, formatter...)
-
+```bash
+yarn test
+```
