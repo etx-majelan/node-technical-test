@@ -17,36 +17,42 @@ The api service will run on port 8080, the web service will run on port 3000.
 Open http://localhost:3000 with your browser to access the web app.
 
 ## What you'll have to do
+
 Clients want to organise their own content. They have audio files which they want to upload and organise into programs. They also want to be able to edit and delete their content.
 
 You will have to create the endpoints to manage medias and programs. You will find the models for each entity along in the sections below.
 
 #### Medias
+
 A media has a name, a file, a duration, and a description.
+
 - Create a media (don't upload anything for real, just create a fake audio file or use a dummy URL)
 - Edit a media
 - Delete a media
 - See all the medias on a page (with pagination)
 
 #### Programs
+
 A program has a name, a cover image (you can use a dummy URL), and a description.
-- Create a program
-- Edit a program
+
+- Create a program, with or without medias
+- Edit a program and the order of medias inside
 - Delete a program
 - See all the programs on a page (with pagination)
 
 #### Rules
+
 - A program can contain between 0 and infinity medias.
 - A media cannot be in more than one program.
-- The order of medias may matter.
-
+- The order of medias matter. It should be possible to change the order of medias inside a program.
 
 ### Requirements
+
 - You must use the boilerplate code as a base for your work. You can add any other dependency you need.
 - You must deliver all the features required.
 - You must test your endpoints to make sure they work as expected. How you test them is up to you.
 
 ### Bonus points
+
 - You can add any extra feature that you'd like to see in this app. Be creative!
 - You can also add any extra quality of life improvement to the app or code (linter, formatter...)
-
