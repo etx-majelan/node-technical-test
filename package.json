@@ -1,12 +1,12 @@
 {
   "name": "node-technical-test",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "src/main.ts",
   "author": "Andréas Pinbouen <andreas.pinbouen@majelan.audio>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "tsc-watch --onSuccess \"node ./dist/index.js\"",
+    "start": "rm -r dist/ | nest start",
     "start:dev": " rm -r dist/ | nest start --watch",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json --fix",
